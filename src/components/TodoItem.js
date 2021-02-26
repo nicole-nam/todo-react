@@ -4,8 +4,9 @@ function TodoItem(props) {
   const [click, setClick] = useState(false);
 
   function handleClick() {
-    console.log(click);
-    setClick(true);
+    setClick((prev) => {
+      return !prev;
+    });
   }
 
   return (
