@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import TodoItem from "./TodoItem";
 
 function App() {
   const [newInput, setNewInput] = useState("");
@@ -6,7 +7,6 @@ function App() {
 
   function handleChange(e) {
     const input = e.target.value;
-    console.log(input);
     setNewInput(input);
   }
 
@@ -14,7 +14,6 @@ function App() {
     setItems((prev) => {
       return [...prev, newInput];
     });
-    console.log(items);
     setNewInput("");
   }
 
@@ -32,7 +31,7 @@ function App() {
       <div>
         <ul>
           {items.map((item) => {
-            return <li>{item}</li>;
+            return <TodoItem text={item} />;
           })}
         </ul>
       </div>
