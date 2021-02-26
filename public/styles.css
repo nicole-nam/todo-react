@@ -55,6 +55,10 @@ body {
   margin-bottom: 20px;
 }
 
+input:focus {
+  outline: none;
+}
+
 button {
   padding: 0;
   border: none;
@@ -64,6 +68,11 @@ button {
   border-radius: 5px;
   background-color: #ffeaa7;
 }
+
+button:focus {
+  outline: none;
+}
+
 button span {
   background: #f1f5f8;
   display: block;
