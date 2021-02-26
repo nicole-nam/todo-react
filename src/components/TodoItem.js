@@ -1,25 +1,10 @@
-import React, { useState } from "react";
+import React from "react";
 
 function TodoItem(props) {
-  const [click, setClick] = useState(false);
-
-  function handleClick() {
-    setClick((prev) => {
-      return !prev;
-    });
-  }
-
   return (
-    <div onClick={handleClick}>
-      <li
-        style={
-          click
-            ? { textDecoration: "line-through" }
-            : { textDecoration: "none" }
-        }
-      >
-        {props.text}
-      </li>
+    <div className="list-container" onClick={() => props.remove(props.id)}>
+      <li>{props.text}</li>
+      <i class="far fa-trash-alt"></i>
     </div>
   );
 }
